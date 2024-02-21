@@ -10,6 +10,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CalendarDateRangePicker } from "@/components/dateRangePicker";
+import { MainNav } from "@/components/mainNav";
+import { Overview } from "@/components/overView";
+import { RecentSales } from "@/components/recentSales";
+import TeamSwitcher from "@/components/teamSwitcher";
+import { UserNav } from "@/components/userNav";
+import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dashboard",
