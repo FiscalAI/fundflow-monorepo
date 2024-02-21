@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
@@ -8,14 +8,16 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { toast } from '@/components/ui/use-toast';
-import { setVerifiedInLocalStorage } from '@/scripts/check-user-auth';
-import { UserProfile } from '@/interfaces/dashboard';
-import { Loader2Icon } from 'lucide-react';
-import { useState } from 'react';
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/components/ui/use-toast";
+import { Loader2Icon } from "lucide-react";
+import { useState } from "react";
 
+interface UserProfile {
+  emailVerified: boolean;
+  id: string;
+}
 interface PageProps {
   params: {
     emailAddress: string;
@@ -30,9 +32,9 @@ const Page: React.FC<PageProps> = ({ params }) => {
       setLoading(true);
 
       const verificationCode = document.getElementById(
-        'verificationCode',
+        "verificationCode"
       ) as HTMLInputElement;
-      const email = document.getElementById('email') as HTMLInputElement;
+      const email = document.getElementById("email") as HTMLInputElement;
 
       const data = verificationCode.value;
       const emailAddress = email.value;
@@ -42,19 +44,19 @@ const Page: React.FC<PageProps> = ({ params }) => {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/signup/confirm/${emailAddress}`,
           {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
               code: data,
             },
-            credentials: 'include',
-          },
+            credentials: "include",
+          }
         );
 
         if (!response.ok) {
           toast({
-            title: 'ERROR',
-            description: 'Wrong verification code',
+            title: "ERROR",
+            description: "Wrong verification code",
           });
         }
 
@@ -62,26 +64,26 @@ const Page: React.FC<PageProps> = ({ params }) => {
 
         if (user.emailVerified) {
           toast({
-            title: 'SUCCESS',
-            description: 'Email verified',
+            title: "SUCCESS",
+            description: "Email verified",
           });
-          let setVerified = false;
-          if (process.browser) {
-            setVerified = setVerifiedInLocalStorage(true);
-          }
-          if (setVerified) {
-            window.location.href = '/dashboard';
-          } else
-            toast({
-              title: 'ERROR',
-              description: 'Unable to store values',
-            });
+          // let setVerified = false;
+          // if (process.browser) {
+          //   setVerified = setVerifiedInLocalStorage(true);
+          // }
+          // if (setVerified) {
+          //   window.location.href = '/dashboard';
+          // } else
+          //   toast({
+          //     title: 'ERROR',
+          //     description: 'Unable to store values',
+          //   });
         }
       } catch (error) {
         toast({
-          variant: 'destructive',
-          title: 'ERROR',
-          description: 'Something went wrong',
+          variant: "destructive",
+          title: "ERROR",
+          description: "Something went wrong",
         });
       }
     } finally {
@@ -109,7 +111,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
         <Button onClick={() => verifyEmail()} className="w-full">
           {loading ? (
             <p>
-              Verifying...{' '}
+              Verifying...{" "}
               <span className="animate-spin">
                 <Loader2Icon />
               </span>
