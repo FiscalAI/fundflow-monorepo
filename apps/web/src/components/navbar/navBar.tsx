@@ -49,7 +49,7 @@ const NavBar = () => {
                   </SheetHeader>
                   <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
-                      <Link href="/learn">
+                      <Link href="/pricing">
                         <Button variant={"ghost"}>Pricing</Button>
                       </Link>
                     </div>
@@ -101,21 +101,18 @@ const NavBar = () => {
         ) : (
           <>
             <div className="flex flex-row items-center space-x-4 border rounded-full z-20 shadow-sm h-10">
-              <Link href="/learn">
-                <Button
-                  variant={"ghost"}
-                  className="text-lg text-white rounded-full"
-                >
+              <Link href="/pricing">
+                <Button variant={"ghost"} className="text-lg  rounded-full">
                   Pricing
                 </Button>
               </Link>
               <Link href="/about">
-                <Button variant={"ghost"} className="text-lg text-white ">
+                <Button variant={"ghost"} className="text-lg  ">
                   About
                 </Button>
               </Link>
               <Link href="/support">
-                <Button variant={"ghost"} className="text-lg text-white ">
+                <Button variant={"ghost"} className="text-lg ">
                   Contact
                 </Button>
               </Link>
@@ -127,14 +124,18 @@ const NavBar = () => {
                 "
             >
               {/* {logginIn ? ( */}
-              // <>{/* <UserAvatar /> */}</>
+              <>{/* <UserAvatar /> */}</>
               {/* ) : ( */}
               <>
                 <Link href="/signin">
-                  <Button variant={"outline"}>Login</Button>
+                  <Button variant={"outline"} className=" text-black">
+                    Login
+                  </Button>
                 </Link>
                 <Link href="/signup">
-                  <Button variant={"outline"}>Sign Up</Button>
+                  <Button variant={"outline"} className=" text-black">
+                    Sign Up
+                  </Button>
                 </Link>
               </>
               {/* )} */}
