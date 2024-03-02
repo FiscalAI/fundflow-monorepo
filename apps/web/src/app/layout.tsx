@@ -3,6 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar/navBar";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/themeProvider";
+import { MainNav } from "@/components/dashboard/mainNav";
+import { Search } from "lucide-react";
+import { UserNav } from "@/components/dashboard/userNav";
+import TeamSwitcher from "@/components/dashboard/teamSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +24,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(" bg-black text-white", inter.className)}>
-        <NavBar />
-        {/* <Toaster /> */}
-        <div className="flex justify-center items-center pt-32">{children}</div>
-        {/* <Footer /> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className=" z-50 fixed w-screen">
+            <NavBar />
+          </div>
+
+          {/* <Toaster /> */}
+          <div className="flex justify-center items-center  pt-24">
+            {children}
+          </div>
+          {/* <Footer /> */}
+        </ThemeProvider>
       </body>
     </html>
   );

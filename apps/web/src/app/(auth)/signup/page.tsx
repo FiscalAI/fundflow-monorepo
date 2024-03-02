@@ -47,7 +47,6 @@ const profileFormSchema = z.object({
       required_error: "Please select an email to display.",
     })
     .email(),
-  bio: z.string().max(160).min(4),
   password: z
     .string()
     .min(8, {
@@ -175,7 +174,7 @@ const SignUp = () => {
                 <FormItem>
                   <FormLabel>Username</FormLabel>
                   <FormControl>
-                    <Input type="text" placeholder="shadcn" {...field} />
+                    <Input type="text" placeholder="FundFlow" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -190,24 +189,7 @@ const SignUp = () => {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="OpenEdu@Example.com"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="bio"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Bio</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Tell us a little bit about yourself"
-                      className="resize-none"
+                      placeholder="user@FundFlow.ai"
                       {...field}
                     />
                   </FormControl>
@@ -222,7 +204,11 @@ const SignUp = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type="password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder="************"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -235,7 +221,11 @@ const SignUp = () => {
                 <FormItem>
                   <FormLabel>Confirm Password</FormLabel>
                   <FormControl>
-                    <Input type="password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder="************"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

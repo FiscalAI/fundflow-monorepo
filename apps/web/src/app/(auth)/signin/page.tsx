@@ -128,7 +128,7 @@ const SignIn = () => {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="OpenEdu@Example.com"
+                      placeholder="user@FundFlow.ai"
                       {...field}
                     />
                   </FormControl>
@@ -143,7 +143,11 @@ const SignIn = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type="password" {...field} />
+                    <Input
+                      type="password"
+                      placeholder="************"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
