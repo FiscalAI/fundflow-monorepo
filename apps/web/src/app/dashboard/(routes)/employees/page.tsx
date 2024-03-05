@@ -132,7 +132,7 @@ const columns: ColumnDef<User>[] = [
     header: "Send Salary",
     cell: ({ row }) => (
       <Button variant="default" onClick={() => handleUpdate(row)}>
-        User Detials
+        Send Salary
       </Button>
     ),
   },

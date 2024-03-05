@@ -144,7 +144,7 @@ const columns: ColumnDef<User>[] = [
     header: "view details",
     cell: ({ row }) => (
       <Button variant="default" onClick={() => handleUpdate(row)}>
-        User Detials
+        View Detials
       </Button>
     ),
   },
