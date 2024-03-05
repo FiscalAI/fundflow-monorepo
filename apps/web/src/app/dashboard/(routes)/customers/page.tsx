@@ -114,9 +114,9 @@ const columns: ColumnDef<User>[] = [
     cell: ({ row }) => <div>{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "username",
+    accessorKey: "userName",
     header: "Username",
-    cell: ({ row }) => <div>{row.getValue("username")}</div>,
+    cell: ({ row }) => <div>{row.getValue("userName")}</div>,
   },
   {
     accessorKey: "phoneNo",
@@ -130,12 +130,12 @@ const columns: ColumnDef<User>[] = [
   },
   {
     accessorKey: "productsPurchased",
-    header: "Email",
+    header: "Products Purchased",
     cell: ({ row }) => <div>{row.getValue("productsPurchased")}</div>,
   },
   {
     accessorKey: "paymentType",
-    header: "Email",
+    header: "Payment Type",
     cell: ({ row }) => <div>{row.getValue("paymentType")}</div>,
   },
 
