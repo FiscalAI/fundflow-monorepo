@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 
 const NavBar = () => {
   const [mobileScreen, setMobileScreen] = useState(false);
-  const [logginIn, setLoggedIn] = useState(false);
+  const [logginIn, setLoggedIn] = useState(true);
 
   useEffect(() => {
     const smallDevice = window.innerWidth <= 800;
@@ -44,7 +44,7 @@ const NavBar = () => {
               : "flex justify-between items-center px-4"
           )}
         >
-          {logginIn ? <TeamSwitcher /> : <></>}
+          {logginIn ? <TeamSwitcher className=" text-black" /> : <></>}
           <MainNav className="mx-6" loggedin={logginIn} />
           <div className="ml-auto flex items-center space-x-4">
             {logginIn ? (

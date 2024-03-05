@@ -17,25 +17,32 @@ export function MainNav({
       {loggedin ? (
         <>
           <Link
-            href=""
+            href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dashboard`}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Overview
           </Link>
           <Link
-            href=""
+            href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dashboard/customers`}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
             Customers
           </Link>
           <Link
-            href=""
+            href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dashboard/employees`}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            Employees
+          </Link>
+          <Link
+            href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dashboard/products`}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
             Products
           </Link>
           <Link
-            href=""
+            href={`${process.env.NEXT_PUBLIC_CLIENT_URL}/dashboard/settings
+            `}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
             Settings
