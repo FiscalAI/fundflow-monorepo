@@ -41,7 +41,7 @@ const NavBar = () => {
           className={cn(
             logginIn
               ? "flex items-center px-4"
-              : "flex justify-between items-center px-4"
+              : "flex justify-between items-center px-4",
           )}
         >
           {logginIn ? <TeamSwitcher className=" text-black" /> : <></>}

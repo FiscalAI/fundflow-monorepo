@@ -32,7 +32,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
       setLoading(true);
 
       const verificationCode = document.getElementById(
-        "verificationCode"
+        "verificationCode",
       ) as HTMLInputElement;
       const email = document.getElementById("email") as HTMLInputElement;
 
@@ -50,7 +50,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
               code: data,
             },
             credentials: "include",
-          }
+          },
         );
 
         if (!response.ok) {

@@ -73,7 +73,8 @@ export class AuthService {
    * @throws ForbiddenException if the username is already taken, password is less than 8 characters,
    * name or username is less than 1 character, or if the email already exists.
    */
-  async signup(dto: AuthDto, response) {
+  // async signup(dto: AuthDto, response) {
+  async signup(dto: AuthDto) {
     try {
       if (
         !dto.email ||
@@ -111,7 +112,7 @@ export class AuthService {
         };
       }
 
-      const token = this.generateRandomToken();
+      // const token = this.generateRandomToken();
       const verificationCode = this.generateVerificationCode();
 
       const subject = 'OTP for Verification';
@@ -160,11 +161,11 @@ export class AuthService {
         };
       }
 
-      const payload = {
-        sub: user.id,
-        username: user.username,
-        email: user.email,
-      };
+      // const payload = {
+      //   sub: user.id,
+      //   username: user.username,
+      //   email: user.email,
+      // };
 
       // const access_token: string = this.jwtService.sign(payload) || '';
 
@@ -467,7 +468,8 @@ export class AuthService {
    */
   // ...
 
-  async signin(dto: LoginDto, response) {
+  // async signin(dto: LoginDto, response) {
+  async signin(dto: LoginDto) {
     try {
       const user = await this.prisma.user.findUnique({
         where: {
@@ -491,11 +493,11 @@ export class AuthService {
         };
       }
 
-      const payload = {
-        sub: user.id,
-        username: user.username,
-        email: user.email,
-      };
+      // const payload = {
+      //   sub: user.id,
+      //   username: user.username,
+      //   email: user.email,
+      // };
 
       // const access_token: string = this.jwtService.sign(payload) || '';
 

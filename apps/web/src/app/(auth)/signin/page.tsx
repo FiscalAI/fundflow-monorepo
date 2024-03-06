@@ -67,7 +67,7 @@ const SignIn = () => {
           },
           body: JSON.stringify(data),
           credentials: "include",
-        }
+        },
       );
       console.log("response made", JSON.stringify(data));
       const response: SignInResponse = await res.json();

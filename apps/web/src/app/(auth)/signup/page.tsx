@@ -57,7 +57,7 @@ const profileFormSchema = z.object({
     })
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character."
+      "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.",
     ),
   confirmPassword: z
     .string()
@@ -69,7 +69,7 @@ const profileFormSchema = z.object({
     })
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character."
+      "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.",
     ),
 });
 
@@ -108,7 +108,7 @@ const SignUp = () => {
           },
           body: JSON.stringify(data),
           credentials: "include",
-        }
+        },
       );
 
       const response: SignUpResponse = await res.json();
