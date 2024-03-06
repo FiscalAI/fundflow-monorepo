@@ -8,21 +8,20 @@ import { PassportModule } from '@nestjs/passport';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
+import { BusinessPlanGeneratorController } from './businessPlanGenerator/businessPlanGenerator.controller';
+import { BusinessPlanGeneratorService } from './businessPlanGenerator/businessPlanGenerator.service';
 
 @Module({
   imports: [
     PrismaModule,
-    PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      global: true,
-      secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: process.env.EXPIRES_IN },
-    }),
+    // PassportModule.register({ defaultStrategy: 'jwt' }),
+    // JwtModule.register({
+    //   global: true,
+    //   secret: process.env.JWT_SECRET,
+    //   signOptions: { expiresIn: process.env.EXPIRES_IN },
+    // }),
   ],
-  controllers: [
-    AppController,
-  AuthController
-],
+  controllers: [AppController, AuthController, BusinessPlanGeneratorController],
   providers: [
     AuthService,
     AppService,
@@ -35,7 +34,8 @@ import { AuthService } from './auth/auth.service';
       },
       scope: Scope.DEFAULT,
     },
-    JwtStrategy,
+    BusinessPlanGeneratorService,
+    // JwtStrategy,
   ],
 })
 export class AppModule {}

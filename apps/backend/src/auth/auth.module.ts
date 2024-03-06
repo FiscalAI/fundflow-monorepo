@@ -19,11 +19,11 @@ import { APP_GUARD } from '@nestjs/core';
       },
       scope: Scope.DEFAULT,
     },
-    JwtStrategy,
-    {
-      provide: APP_GUARD,
-      useClass: JwtAuthGuard,
-    },
+    // JwtStrategy,
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: JwtAuthGuard,
+    // },
   ],
   exports: [AuthService],
 })

@@ -6,7 +6,7 @@ import Redis from 'ioredis';
 import sendEmail from 'src/email/email';
 
 import * as bcrypt from 'bcrypt';
-import { JwtService } from '@nestjs/jwt';
+// import { JwtService } from '@nestjs/jwt';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 /**
@@ -17,7 +17,7 @@ export class AuthService {
   constructor(
     private prisma: PrismaService,
     @Inject('REDIS') private redisClient: Redis,
-    private jwtService: JwtService,
+    // private jwtService: JwtService,
   ) {}
 
   /**
@@ -147,7 +147,7 @@ export class AuthService {
           name: dto.name,
           username: dto.username,
           emailVerified: false,
-          token: this.generateRandomToken(), 
+          token: this.generateRandomToken(),
         },
       });
 
@@ -156,7 +156,7 @@ export class AuthService {
       } catch (error) {
         return {
           status: 500,
-          message: `Error with Reddis. ${error}`
+          message: `Error with Reddis. ${error}`,
         };
       }
 
@@ -166,18 +166,18 @@ export class AuthService {
         email: user.email,
       };
 
-      const access_token: string = this.jwtService.sign(payload) || '';
+      // const access_token: string = this.jwtService.sign(payload) || '';
 
       // Set the access_token as a cookie
-      response.cookie('access_token', access_token, { httpOnly: true });
+      // response.cookie('access_token', access_token, { httpOnly: true });
 
       // Omitting the password from the result before sending it
       delete user.password;
 
       return {
-        status : 200,
-        message: "Sign In Successfull",
-        data: user
+        status: 200,
+        message: 'Sign In Successfull',
+        data: user,
       };
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
@@ -497,18 +497,18 @@ export class AuthService {
         email: user.email,
       };
 
-      const access_token: string = this.jwtService.sign(payload) || '';
+      // const access_token: string = this.jwtService.sign(payload) || '';
 
       // Set the access_token as a cookie
-      response.cookie('access_token', access_token, { httpOnly: true });
+      // response.cookie('access_token', access_token, { httpOnly: true });
 
       // Omitting the password from the result before sending it
       delete user.password;
 
       return {
         status: 200,
-        message: "Login Successful",
-        data: user
+        message: 'Login Successful',
+        data: user,
       };
     } catch (error) {
       return {
