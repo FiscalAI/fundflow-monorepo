@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export function NavBarComponent() {
   return (
-    <div className=" h-16 flex flex-row justify-between items-center">
+    <div className=" h-16 flex flex-row justify-between items-center mx-5">
       <Image src="/images/logo.svg" width={150} height={150} alt="logo" />
       <div>
         <Link href="/feature">
@@ -23,7 +23,7 @@ export function NavBarComponent() {
           </Button>
         </Link>
       </div>
-      <div>
+      <div className="flex flex-row">
         <Button variant={"default"} className=" mr-4">
           Sign up
         </Button>
