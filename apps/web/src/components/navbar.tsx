@@ -24,11 +24,17 @@ export function NavBarComponent() {
         </Link>
       </div>
       <div className="flex flex-row">
-        <Button variant={"default"} className=" mr-4">
-          Sign up
-        </Button>
+        <Link href={"/signup"}>
+          <Button variant={"default"} className=" mr-4">
+            Sign up
+          </Button>
+        </Link>
         <div>
-          <Button variant={"outline"}>Login</Button>
+          <Link href={"/login"}>
+            <Button variant={"outline"} className=" mr-4">
+              Login
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
