@@ -38,7 +38,7 @@ export default function AuthenticationPage() {
           )}
         >
           Dont't have an Account?
-          <Link href="/login">
+          <Link href="/signup">
             {" "}
             <Button variant={"link"}>Register</Button>
           </Link>
