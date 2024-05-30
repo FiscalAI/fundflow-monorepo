@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import { NavBarComponent } from "@/components/navbar";
+import "./../globals.css";
 import { cn } from "@/lib/utils";
+import { NavBarComponent } from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fiscal AI",
+  title: "Auth Fiscal AI",
   description:
     "Fiscal AI is modern monry management platform powered by AI. Track expenses, optimize investments, and reach your goals—all in one place.",
 };
